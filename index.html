@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecriture Comptable Maroc — Les Écritures Comptables</title>
-  <meta name="description" content="Écritures comptables marocaines avec exemples détaillés : paie, TVA, IS, amortissements, leasing, banque, caisse...">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Ecriture Comptable Maroc — Plateforme Comptabilité</title>
+  <meta name="description" content="Ecriture comptable Maroc : écritures comptables, téléchargements gratuits Excel, PDF, formation comptabilité, calcul paie et salaire, exercices corrigés.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
@@ -15,6 +15,8 @@
     body{font-family:'Inter',sans-serif;background:#0a0f1e;color:#e2e8f0;min-height:100vh;line-height:1.6;overflow-x:hidden;position:relative}
     .container{max-width:1280px;margin:0 auto;padding:0 24px}
     a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    img{max-width:100%;display:block}
 
     /* ============ BACKGROUND ============ */
     .bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.06) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);z-index:0;pointer-events:none}
@@ -32,100 +34,57 @@
     .nav-logo-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.85rem}
     .nav-logo-text{font-size:1.05rem;color:#fff}
     .nav-logo-text span{background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .nav-links{display:flex;align-items:center;gap:30px}
+    .nav-links a{color:#cbd5e1;font-weight:500;font-size:.95rem;transition:color .2s}
+    .nav-links a:hover{color:#fff}
+    .nav-links a.nav-cta{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.25);padding:8px 18px;border-radius:8px;color:#60a5fa}
+    .nav-links a.nav-cta:hover{background:rgba(59,130,246,.25)}
+
+    /* ============ HERO ============ */
+    .hero{position:relative;padding:160px 0 80px;z-index:1;text-align:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-size:.82rem;font-weight:600;background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.25);margin-bottom:24px}
+    .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:#fff;margin-bottom:20px;letter-spacing:-.02em;line-height:1.1}
+    .gradient-text{background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:#94a3b8;max-width:600px;margin:0 auto 32px;font-size:1.1rem}
+    .hero-buttons{display:flex;gap:16px;justify-content:center;margin-bottom:48px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.95rem;transition:all .3s ease;border:1px solid transparent;cursor:pointer;font-family:inherit}
+    .btn-primary{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px -5px rgba(59,130,246,.4)}
+    .btn-outline{background:rgba(255,255,255,.05);color:#fff;border-color:rgba(255,255,255,.15)}
+    .btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3)}
+    .hero-stats{display:flex;gap:60px;justify-content:center;flex-wrap:wrap}
+    .hero-stat-number{font-size:2.5rem;font-weight:800;color:#fff;margin-bottom:4px}
+    .hero-stat-label{color:#94a3b8;font-size:.9rem}
 
     /* ============ SECTION ============ */
-    .section{position:relative;padding:120px 0 80px;z-index:1}
+    .section{position:relative;padding:80px 0;z-index:1}
+    .section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);margin:0}
     .section-header{text-align:center;margin-bottom:48px}
     .section-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-size:.82rem;font-weight:600;background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.25);margin-bottom:16px}
+    .section-badge.emerald{background:rgba(16,185,129,.12);color:#34d399;border-color:rgba(16,185,129,.25)}
+    .section-badge.purple{background:rgba(139,92,246,.12);color:#a78bfa;border-color:rgba(139,92,246,.25)}
+    .section-badge.amber{background:rgba(245,158,11,.12);color:#fbbf24;border-color:rgba(245,158,11,.25)}
     .section-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-.02em}
     .section-desc{color:#94a3b8;max-width:600px;margin:0 auto;font-size:1rem}
 
     /* ============ SEARCH ============ */
     .search-wrap{max-width:580px;margin:0 auto 40px;position:relative}
     .search-box{position:relative;display:flex;align-items:center}
-    .search-input{
-      width:100%;
-      padding:15px 50px 15px 50px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:14px;
-      color:#fff;
-      font-family:inherit;
-      font-size:1rem;
-      transition:border-color .25s ease,background .25s ease,box-shadow .25s ease;
-      backdrop-filter:blur(10px);
-    }
+    .search-input{width:100%;padding:15px 50px 15px 50px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;color:#fff;font-family:inherit;font-size:1rem;transition:border-color .25s ease,background .25s ease,box-shadow .25s ease;backdrop-filter:blur(10px)}
     .search-input::placeholder{color:#64748b}
-    .search-input:focus{
-      outline:none;
-      border-color:rgba(59,130,246,.5);
-      background:rgba(59,130,246,.06);
-      box-shadow:0 0 0 4px rgba(59,130,246,.12),0 8px 28px -8px rgba(59,130,246,.3);
-    }
-    .search-icon{
-      position:absolute;
-      left:18px;
-      color:#64748b;
-      font-size:.95rem;
-      pointer-events:none;
-      transition:color .25s ease;
-    }
+    .search-input:focus{outline:none;border-color:rgba(59,130,246,.5);background:rgba(59,130,246,.06);box-shadow:0 0 0 4px rgba(59,130,246,.12),0 8px 28px -8px rgba(59,130,246,.3)}
+    .search-icon{position:absolute;left:18px;color:#64748b;font-size:.95rem;pointer-events:none;transition:color .25s ease}
     .search-box:focus-within .search-icon{color:#60a5fa}
-    .search-clear{
-      position:absolute;
-      right:10px;
-      width:30px;
-      height:30px;
-      border-radius:50%;
-      border:none;
-      background:rgba(255,255,255,.08);
-      color:#cbd5e1;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:.75rem;
-      opacity:0;
-      visibility:hidden;
-      transform:scale(.7);
-      transition:opacity .2s ease,visibility .2s ease,transform .2s ease,background .2s ease;
-    }
+    .search-clear{position:absolute;right:10px;width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,.08);color:#cbd5e1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.75rem;opacity:0;visibility:hidden;transform:scale(.7);transition:all .2s ease}
     .search-clear.show{opacity:1;visibility:visible;transform:scale(1)}
     .search-clear:hover{background:rgba(255,255,255,.18);color:#fff}
-    .search-clear:focus-visible{outline:2px solid #3b82f6;outline-offset:2px}
-    .search-count{
-      text-align:center;
-      margin-top:12px;
-      font-size:.82rem;
-      color:#64748b;
-      min-height:1.2em;
-    }
+    .search-count{text-align:center;margin-top:12px;font-size:.82rem;color:#64748b;min-height:1.2em}
     .search-count strong{color:#94a3b8;font-weight:600}
-    .search-hint{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:6px;
-      margin-top:6px;
-      font-size:.75rem;
-      color:#475569;
-    }
-    .search-hint kbd{
-      display:inline-block;
-      padding:1px 6px;
-      border-radius:4px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.1);
-      font-family:inherit;
-      font-size:.72rem;
-      color:#94a3b8;
-    }
 
     /* ============ CARDS ============ */
     .ecritures-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px}
     .glass-card{background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:18px;backdrop-filter:blur(10px);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease,opacity .25s ease}
-    .ecriture-card{padding:24px 16px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;cursor:pointer;font-family:inherit;color:inherit;width:100px}
-    button.ecriture-card{background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.01));width:100%}
+    .ecriture-card{padding:24px 16px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;cursor:pointer;font-family:inherit;color:inherit;width:100%;background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.01))}
     .ecriture-card:hover{transform:translateY(-6px);border-color:rgba(59,130,246,.4);box-shadow:0 18px 40px -10px rgba(59,130,246,.25)}
     .ecriture-card:focus-visible{outline:2px solid #3b82f6;outline-offset:3px}
     .ecriture-card.is-hidden{display:none}
@@ -140,34 +99,74 @@
     .icon-rose   {background:linear-gradient(135deg,#f43f5e,#9f1239)}
     .icon-indigo {background:linear-gradient(135deg,#6366f1,#3730a3)}
 
-    .no-results{
-      grid-column:1/-1;
-      text-align:center;
-      padding:60px 20px;
-      background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
-      border:1px dashed rgba(255,255,255,.12);
-      border-radius:18px;
-    }
+    .no-results{grid-column:1/-1;text-align:center;padding:60px 20px;background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px dashed rgba(255,255,255,.12);border-radius:18px}
     .no-results i{font-size:2.5rem;color:#475569;margin-bottom:16px;display:block}
     .no-results h3{color:#cbd5e1;font-size:1.1rem;margin-bottom:6px;font-weight:600}
     .no-results p{font-size:.9rem;color:#64748b}
-    .no-results .no-results-reset{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin-top:18px;
-      padding:8px 18px;
-      border-radius:10px;
-      background:rgba(59,130,246,.12);
-      border:1px solid rgba(59,130,246,.25);
-      color:#60a5fa;
-      font-family:inherit;
-      font-size:.85rem;
-      font-weight:600;
-      cursor:pointer;
-      transition:background .2s ease;
-    }
+    .no-results .no-results-reset{display:inline-flex;align-items:center;gap:6px;margin-top:18px;padding:8px 18px;border-radius:10px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.25);color:#60a5fa;font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;transition:background .2s ease}
     .no-results .no-results-reset:hover{background:rgba(59,130,246,.2)}
+
+    /* ============ DOWNLOADS ============ */
+    .downloads-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+    .download-card{padding:18px;display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;cursor:pointer}
+    .download-card:hover{transform:translateY(-4px);border-color:rgba(16,185,129,.4);box-shadow:0 14px 30px -10px rgba(16,185,129,.2)}
+    .download-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0}
+    .download-info h3{font-size:1rem;color:#fff;margin-bottom:4px;font-weight:600}
+    .download-info p{font-size:.85rem;color:#94a3b8}
+    .download-arrow{margin-left:auto;color:#475569;transition:transform .3s,color .3s}
+    .download-card:hover .download-arrow{transform:translateX(4px);color:#34d399}
+
+    /* ============ ARTICLES ============ */
+    .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+    .article-card{overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;cursor:pointer}
+    .article-card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.4);box-shadow:0 18px 40px -10px rgba(139,92,246,.2)}
+    .article-img-wrapper{aspect-ratio:16/9;overflow:hidden;background:#1e293b}
+    .article-img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .article-card:hover .article-img{transform:scale(1.05)}
+    .article-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .article-tag{align-self:flex-start;padding:4px 10px;border-radius:6px;font-size:.75rem;font-weight:600}
+    .tag-blue{background:rgba(59,130,246,.15);color:#60a5fa}
+    .tag-emerald{background:rgba(16,185,129,.15);color:#34d399}
+    .tag-purple{background:rgba(139,92,246,.15);color:#a78bfa}
+    .article-body h3{font-size:1.1rem;color:#fff;line-height:1.4;font-weight:700}
+    .article-body p{font-size:.9rem;color:#94a3b8;flex:1}
+    .article-meta{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:#64748b;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06)}
+    .read-more-link{color:#a78bfa;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+
+    /* ============ CONTACT ============ */
+    .contact-wrapper{display:grid;grid-template-columns:1fr 1.5fr;gap:24px}
+    .contact-info{padding:28px}
+    .contact-info h3{font-size:1.4rem;color:#fff;margin-bottom:10px}
+    .contact-info > p{color:#94a3b8;margin-bottom:28px;font-size:.95rem}
+    .contact-detail{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start}
+    .contact-detail-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;flex-shrink:0}
+    .contact-detail-text h4{color:#cbd5e1;font-size:.95rem;margin-bottom:2px}
+    .contact-detail-text p{color:#94a3b8;font-size:.9rem}
+    .contact-form{padding:28px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+    .form-group label{font-size:.85rem;color:#94a3b8;font-weight:500}
+    .form-group input,.form-group textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;color:#fff;font-family:inherit;font-size:.95rem;resize:vertical;transition:all .2s}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:rgba(59,130,246,.5);background:rgba(59,130,246,.06)}
+    .btn-submit{width:100%;justify-content:center;margin-top:8px}
+
+    /* ============ FOOTER ============ */
+    .footer{border-top:1px solid rgba(255,255,255,.06);padding:60px 0 30px;margin-top:40px;background:rgba(10,15,30,.5);position:relative;z-index:1}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+    .footer-brand p{color:#94a3b8;font-size:.9rem;margin:16px 0;max-width:400px}
+    .footer-social{display:flex;gap:12px}
+    .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#94a3b8;transition:all .3s}
+    .footer-social a:hover{background:rgba(59,130,246,.15);color:#60a5fa;border-color:rgba(59,130,246,.3);transform:translateY(-2px)}
+    .footer-col h4{color:#fff;font-size:1rem;margin-bottom:16px}
+    .footer-col ul{display:flex;flex-direction:column;gap:10px}
+    .footer-col a{color:#94a3b8;font-size:.9rem;transition:color .2s}
+    .footer-col a:hover{color:#60a5fa}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:#64748b}
+
+    /* ============ BACK TO TOP ============ */
+    .back-to-top{position:fixed;bottom:30px;right:30px;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.2rem;opacity:0;visibility:hidden;transform:translateY(20px);transition:all .3s ease;z-index:999;box-shadow:0 8px 20px rgba(59,130,246,.3)}
+    .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+    .back-to-top:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(59,130,246,.4)}
 
     /* ============ MODAL ============ */
     .ec-modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;z-index:9999;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}
@@ -180,7 +179,6 @@
     .ec-modal.is-closing .ec-modal-backdrop{opacity:0;transition:opacity .2s ease-in}
     .ec-modal-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;font-size:1rem}
     .ec-modal-close:hover{background:rgba(255,255,255,.15);transform:rotate(90deg)}
-    .ec-modal-close:focus-visible,.ec-modal-dialog :focus-visible{outline:2px solid #3b82f6;outline-offset:3px;border-radius:8px}
     .ec-modal-head{display:flex;gap:16px;align-items:center;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.08);padding-right:48px}
     .ec-modal-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;background:linear-gradient(135deg,#3b82f6,#8b5cf6);flex-shrink:0}
     .ec-modal-head h3{margin:0;font-size:1.4rem;color:#fff}
@@ -197,9 +195,18 @@
     .ec-note{margin-top:16px;padding:12px 16px;background:rgba(59,130,246,.08);border-left:3px solid #3b82f6;border-radius:8px;color:#cbd5e1;font-size:.9rem;line-height:1.6}
     body.ec-modal-open{overflow:hidden}
 
+    /* ============ RESPONSIVE ============ */
+    @media (max-width:768px){
+      .nav-links{display:none}
+      .hero-stats{gap:30px}
+      .contact-wrapper{grid-template-columns:1fr}
+      .form-row{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+    }
+
     @media (prefers-reduced-motion: reduce){
-      .ec-modal,.ec-modal-backdrop,.ec-modal-dialog,.ecriture-card,.ecriture-icon,.search-input,.search-clear{transition:none !important;animation:none !important}
-      .ec-modal-dialog{transform:none !important}
+      *{transition:none !important;animation:none !important}
     }
   </style>
 </head>
@@ -212,15 +219,54 @@
     <div class="bg-orb bg-orb-3"></div>
   </div>
 
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#" class="nav-logo">
         <div class="nav-logo-icon">EC</div>
         <div class="nav-logo-text">Ecriture <span>Comptable</span></div>
       </a>
+      <ul class="nav-links">
+        <li><a href="#ecritures">Écritures</a></li>
+        <li><a href="#downloads">Téléchargements</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#ecritures" class="nav-cta">Explorer</a></li>
+      </ul>
     </div>
   </nav>
 
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <i class="fas fa-circle"></i> Plateforme Comptabilité Marocaine
+      </div>
+      <h1>Maîtrisez les<br><span class="gradient-text">Écritures Comptables</span></h1>
+      <p>Votre référence complète en comptabilité marocaine. Écritures comptables, outils Excel gratuits, formations et guides pratiques pour comptables et étudiants.</p>
+      <div class="hero-buttons">
+        <a href="#ecritures" class="btn btn-primary"><i class="fas fa-book-open"></i> Les Écritures</a>
+        <a href="#downloads" class="btn btn-outline"><i class="fas fa-download"></i> Téléchargements Gratuits</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">50+</div>
+          <div class="hero-stat-label">Écritures Comptables</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">30+</div>
+          <div class="hero-stat-label">Fichiers Gratuits</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">100K+</div>
+          <div class="hero-stat-label">Visiteurs / mois</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ECRITURES COMPTABLES -->
   <section class="section" id="ecritures">
     <div class="container">
       <div class="section-header">
@@ -229,25 +275,13 @@
         <p class="section-desc">Cliquez sur une carte pour voir un exemple détaillé avec débit, crédit et explication.</p>
       </div>
 
-      <!-- ============ SEARCH BAR ============ -->
       <div class="search-wrap">
         <div class="search-box">
           <i class="fas fa-search search-icon" aria-hidden="true"></i>
-          <input
-            type="text"
-            class="search-input"
-            id="searchInput"
-            placeholder="Rechercher par nom ou numéro de compte…"
-            aria-label="Rechercher une écriture comptable"
-            autocomplete="off"
-            spellcheck="false"
-          >
-          <button class="search-clear" id="searchClear" aria-label="Effacer la recherche" type="button">
-            <i class="fas fa-times"></i>
-          </button>
+          <input type="text" class="search-input" id="searchInput" placeholder="Rechercher par nom ou numéro de compte…" aria-label="Rechercher une écriture comptable" autocomplete="off" spellcheck="false">
+          <button class="search-clear" id="searchClear" aria-label="Effacer la recherche" type="button"><i class="fas fa-times"></i></button>
         </div>
         <div class="search-count" id="searchCount" aria-live="polite" role="status"></div>
-        <div class="search-hint"><kbd>/</kbd> pour focus rapide</div>
       </div>
 
       <div class="ecritures-grid" id="ecrituresGrid">
@@ -274,32 +308,243 @@
         <button class="glass-card ecriture-card" data-key="ecart"><div class="ecriture-icon icon-cyan"><i class="fas fa-balance-scale"></i></div><h3>Écart Conversion</h3></button>
       </div>
     </div>
+  </section>
 
-    <!-- MODAL -->
-    <div class="ec-modal" id="ecModal" aria-hidden="true">
-      <div class="ec-modal-backdrop" data-close></div>
-      <div class="ec-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="ecModalTitle">
-        <button class="ec-modal-close" data-close aria-label="Fermer"><i class="fas fa-times"></i></button>
-        <div class="ec-modal-head">
-          <div class="ec-modal-icon" id="ecModalIcon"><i class="fas fa-book"></i></div>
-          <div>
-            <h3 id="ecModalTitle">Titre</h3>
-            <p id="ecModalDesc" class="ec-modal-desc"></p>
+  <div class="section-divider"></div>
+
+  <!-- TELECHARGEMENTS GRATUITS -->
+  <section class="section" id="downloads">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge emerald"><i class="fas fa-download"></i> Gratuit</div>
+        <h2 class="section-title">Téléchargements Gratuits</h2>
+        <p class="section-desc">Modèles Excel, documents PDF et Word prêts à l'emploi pour votre travail comptable quotidien.</p>
+      </div>
+      <div class="downloads-grid">
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-emerald"><i class="fas fa-calculator"></i></div><div class="download-info"><h3>Calcul Salaire Net</h3><p>Excel gratuit — IR, CNSS</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-blue"><i class="fas fa-file-invoice-dollar"></i></div><div class="download-info"><h3>Fiche de Paie</h3><p>Modèle Excel complet</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-purple"><i class="fas fa-envelope-open-text"></i></div><div class="download-info"><h3>Lettre de Motivation</h3><p>Modèle Word professionnel</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-amber"><i class="fas fa-spell-check"></i></div><div class="download-info"><h3>Chiffre en Lettre</h3><p>Excel sans macro</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-cyan"><i class="fas fa-cash-register"></i></div><div class="download-info"><h3>PV de Caisse</h3><p>Modèle Excel gratuit</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-indigo"><i class="fas fa-balance-scale-right"></i></div><div class="download-info"><h3>Rapprochement Bancaire</h3><p>État Excel détaillé</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-emerald"><i class="fas fa-chart-bar"></i></div><div class="download-info"><h3>Cash Flow</h3><p>Tableau Excel automatisé</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-rose"><i class="fas fa-clipboard-list"></i></div><div class="download-info"><h3>Bon de Commande</h3><p>Modèle Excel</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-blue"><i class="fas fa-university"></i></div><div class="download-info"><h3>Suivi Banque</h3><p>Encaissement / Décaissement</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-amber"><i class="fas fa-file-alt"></i></div><div class="download-info"><h3>Bulletin de Paie</h3><p>Méthode de calcul Excel</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-cyan"><i class="fas fa-file-invoice"></i></div><div class="download-info"><h3>Facture Excel</h3><p>Modèle prêt à l'emploi</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+        <a href="#" class="glass-card download-card"><div class="download-icon icon-indigo"><i class="fas fa-book"></i></div><div class="download-info"><h3>Plan Comptable Marocain</h3><p>PDF complet officiel</p></div><i class="fas fa-arrow-right download-arrow"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ARTICLES -->
+  <section class="section" id="articles">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge purple"><i class="fas fa-newspaper"></i> Articles</div>
+        <h2 class="section-title">Derniers Articles</h2>
+        <p class="section-desc">Guides pratiques, tutoriels et actualités comptables pour enrichir vos connaissances.</p>
+      </div>
+      <div class="articles-grid">
+        <a href="#" class="glass-card article-card">
+          <div class="article-img-wrapper">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiyPxCyb5AL804B08q08nbnZoPGO0b3HW4psDZBcH3s5gDJlYa7rSYKgmVfSd4IgBlhJSLD55FtwolSsI39NjH9q89VSm5p5wtWHNF0NQEIX3-Stlkdl54cQ9TzU8ZgWhduZSLuFqxEqaqFBA_EG9BqTHYlLUUE1JKAImjKxX6_-hZuH_SX96Q1Zss40Lj9=w640-h426" alt="Lettrage comptable" class="article-img" loading="lazy">
+          </div>
+          <div class="article-body">
+            <span class="article-tag tag-blue">Écriture Comptable</span>
+            <h3>Lettrage comptable : définition et importance</h3>
+            <p>Le lettrage comptable est une tâche essentielle en comptabilité qui consiste à rapprocher et à lier entre eux les montants qui se correspondent dans un même compte.</p>
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> Ahmad Specialist</span>
+              <span class="read-more-link">Lire la suite <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="glass-card article-card">
+          <div class="article-img-wrapper">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiLovzzJOTZn3douxeACpc8xT7JkL4I-7omuaMfLzGiL7PE6_o6h2250CjV3OO5rPC5US8SAllFjQnHR6uSgYCy7mVyHX-ohUuJEwi4ykPXm6Ws7s3ilcDIyD6_zRulDxVaO-M3X3BDFPFs51udPnRp9etFNVzEeBMRTfDKzvxNmNoaP_OGo5iZUvhCa7Wl=w400-h400" alt="Plan comptable marocain pdf" class="article-img" loading="lazy">
+          </div>
+          <div class="article-body">
+            <span class="article-tag tag-emerald">Téléchargement</span>
+            <h3>Plan comptable marocain PDF</h3>
+            <p>Téléchargez le Plan Comptable Marocain en PDF, un outil essentiel pour étudiants, comptables et entreprises. Ce document officiel regroupe les classes et numéros de comptes.</p>
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> Ahmad Specialist</span>
+              <span class="read-more-link">Lire la suite <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="glass-card article-card">
+          <div class="article-img-wrapper">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcYuHLhtJ9aY8qeA17Gh0DbL1gU3H9cSVmjSxgMIOldLe3-yKdKMtm-ZRCs8ZLeLc5sAPvRnHN_lJyog9SdtmCdj-zXOIRYJgbGSitXrcyG9v070RWaJa0roGowA0CE0xCenu0J4q-1mFM_ZAO95ZfxcjbcVU5Bgcm0foXu1ypOnoKf3xTxhnWMU9w7Zxp/w640-h426/comptable%20vtc%20bvtc.png" alt="Comptable vtc bvtc" class="article-img" loading="lazy">
+          </div>
+          <div class="article-body">
+            <span class="article-tag tag-purple">Guide Pratique</span>
+            <h3>Comptable VTC BVTC</h3>
+            <p>Le métier de chauffeur VTC connaît une croissance rapide. La gestion des finances et des obligations comptables peut devenir un véritable défi. Découvrez comment un comptable VTC peut vous aider.</p>
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> Ahmad Specialist</span>
+              <span class="read-more-link">Lire la suite <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge amber"><i class="fas fa-envelope"></i> Contact</div>
+        <h2 class="section-title">Contactez-nous</h2>
+        <p class="section-desc">Une question ou une suggestion ? N'hésitez pas à nous écrire, nous sommes à votre écoute.</p>
+      </div>
+      <div class="contact-wrapper">
+        <div class="glass-card contact-info">
+          <h3>Restons en contact</h3>
+          <p>Nous sommes disponibles pour répondre à vos questions concernant la comptabilité marocaine, les écritures comptables et les outils disponibles.</p>
+          <div class="contact-detail">
+            <div class="contact-detail-icon icon-blue"><i class="fas fa-globe"></i></div>
+            <div class="contact-detail-text">
+              <h4>Site Web</h4>
+              <p>www.ecriture-comptable.com</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon icon-emerald"><i class="fas fa-envelope"></i></div>
+            <div class="contact-detail-text">
+              <h4>Email</h4>
+              <p>contact@ecriture-comptable.com</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon icon-purple"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-detail-text">
+              <h4>Localisation</h4>
+              <p>Maroc</p>
+            </div>
           </div>
         </div>
-        <div class="ec-modal-body">
-          <h4>Exemple d'écriture</h4>
-          <div class="ec-table-wrap">
-            <table class="ec-table">
-              <thead><tr><th>Compte</th><th>Libellé</th><th class="num">Débit</th><th class="num">Crédit</th></tr></thead>
-              <tbody id="ecModalRows"></tbody>
-            </table>
-          </div>
-          <p class="ec-note" id="ecModalNote"></p>
+        <div class="glass-card contact-form">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Nom</label>
+                <input type="text" id="contactName" placeholder="Votre nom" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">E-mail</label>
+                <input type="email" id="contactEmail" placeholder="votre@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Sujet</label>
+              <input type="text" id="contactSubject" placeholder="Sujet de votre message">
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="5" placeholder="Écrivez votre message ici..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit"><i class="fas fa-paper-plane"></i> Envoyer le message</button>
+          </form>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" style="margin-bottom: 8px; display: inline-flex;">
+            <div class="nav-logo-icon">EC</div>
+            <div class="nav-logo-text">Ecriture <span>Comptable</span></div>
+          </a>
+          <p>La gestion des écritures comptables au Maroc est indispensable pour assurer la transparence financière des entreprises. Votre référence en comptabilité marocaine.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Écritures</h4>
+          <ul>
+            <li><a href="#ecritures">La Paie</a></li>
+            <li><a href="#ecritures">Vente Marchandise</a></li>
+            <li><a href="#ecritures">Banque</a></li>
+            <li><a href="#ecritures">Amortissements</a></li>
+            <li><a href="#ecritures">TVA</a></li>
+            <li><a href="#ecritures">Impôt IS</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Téléchargements</h4>
+          <ul>
+            <li><a href="#downloads">Calcul Salaire</a></li>
+            <li><a href="#downloads">Facture Excel</a></li>
+            <li><a href="#downloads">Plan Comptable PDF</a></li>
+            <li><a href="#downloads">Bon de Commande</a></li>
+            <li><a href="#downloads">Statut SARL</a></li>
+            <li><a href="#downloads">Bulletin Paie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Liens Utiles</h4>
+          <ul>
+            <li><a href="#">À propos de nous</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">Conditions d'utilisation</a></li>
+            <li><a href="#">Logiciels STE</a></li>
+            <li><a href="#">Compta France</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Ecriture Comptable Maroc. Tous droits réservés.</p>
+        <p>Fait avec <i class="fas fa-heart" style="color: #f43f5e;"></i> pour la communauté comptable</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- MODAL -->
+  <div class="ec-modal" id="ecModal" aria-hidden="true">
+    <div class="ec-modal-backdrop" data-close></div>
+    <div class="ec-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="ecModalTitle">
+      <button class="ec-modal-close" data-close aria-label="Fermer"><i class="fas fa-times"></i></button>
+      <div class="ec-modal-head">
+        <div class="ec-modal-icon" id="ecModalIcon"><i class="fas fa-book"></i></div>
+        <div>
+          <h3 id="ecModalTitle">Titre</h3>
+          <p id="ecModalDesc" class="ec-modal-desc"></p>
+        </div>
+      </div>
+      <div class="ec-modal-body">
+        <h4>Exemple d'écriture</h4>
+        <div class="ec-table-wrap">
+          <table class="ec-table">
+            <thead><tr><th>Compte</th><th>Libellé</th><th class="num">Débit</th><th class="num">Crédit</th></tr></thead>
+            <tbody id="ecModalRows"></tbody>
+          </table>
+        </div>
+        <p class="ec-note" id="ecModalNote"></p>
+      </div>
+    </div>
+  </div>
 
   <script>
     const ECRITURES_DATA = {
@@ -326,7 +571,7 @@
       ecart:{title:"Écart de Conversion",icon:"fa-balance-scale",desc:"Évaluation d'une dette en devise à la clôture.",rows:[["4411","Fournisseurs étrangers",1500,null],["4701","Écart de conversion - Passif",null,1500]],note:"À la clôture, dettes/créances en devises sont réévaluées au cours du jour."}
     };
 
-    /* ============ MODAL IIFE ============ */
+    /* ============ MODAL & SEARCH LOGIC ============ */
     (function(){
       const modal=document.getElementById('ecModal');
       const dialog=modal.querySelector('.ec-modal-dialog');
@@ -393,102 +638,95 @@
         if(e.key==='Escape'){e.preventDefault();close();}else trapTab(e);
       });
 
-      /* ============ SEARCH IIFE ============ */
-      (function(){
-        const searchInput=document.getElementById('searchInput');
-        const searchClear=document.getElementById('searchClear');
-        const searchCount=document.getElementById('searchCount');
-        const grid=document.getElementById('ecrituresGrid');
+      /* ============ SEARCH ============ */
+      const searchInput=document.getElementById('searchInput');
+      const searchClear=document.getElementById('searchClear');
+      const searchCount=document.getElementById('searchCount');
+      const grid=document.getElementById('ecrituresGrid');
 
-        /* Normalisation : minuscules + suppression accents */
-        const norm=str=>(str||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      const norm=str=>(str||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
 
-        /* Construction d'un texte searchable pour chaque carte :
-           title + desc + note + tous les comptes + tous les libellés */
-        const cardData=Array.from(grid.querySelectorAll('.ecriture-card')).map(card=>{
-          const d=ECRITURES_DATA[card.dataset.key];
-          let text='';
-          if(d){
-            const parts=[d.title,d.desc,d.note];
-            (d.rows||[]).forEach(([acc,lib])=>{parts.push(acc,lib);});
-            text=norm(parts.join(' '));
-          }
-          return{el:card,text};
+      const cardData=Array.from(grid.querySelectorAll('.ecriture-card')).map(card=>{
+        const d=ECRITURES_DATA[card.dataset.key];
+        let text='';
+        if(d){
+          const parts=[d.title,d.desc,d.note];
+          (d.rows||[]).forEach(([acc,lib])=>{parts.push(acc,lib);});
+          text=norm(parts.join(' '));
+        }
+        return{el:card,text};
+      });
+
+      const total=cardData.length;
+
+      function filter(rawQuery){
+        const q=norm(rawQuery.trim());
+        let visible=0;
+        const prevNoRes=grid.querySelector('.no-results');
+        if(prevNoRes)prevNoRes.remove();
+
+        cardData.forEach(({el,text})=>{
+          const match=!q||text.includes(q);
+          el.classList.toggle('is-hidden',!match);
+          if(match)visible++;
         });
 
-        const total=cardData.length;
-
-        function filter(rawQuery){
-          const q=norm(rawQuery.trim());
-          let visible=0;
-
-          /* Supprimer un éventuel message "no results" précédent */
-          const prevNoRes=grid.querySelector('.no-results');
-          if(prevNoRes)prevNoRes.remove();
-
-          cardData.forEach(({el,text})=>{
-            const match=!q||text.includes(q);
-            el.classList.toggle('is-hidden',!match);
-            if(match)visible++;
-          });
-
-          /* Bouton clear + compteur */
-          if(rawQuery.trim()){
-            searchClear.classList.add('show');
-            searchCount.innerHTML='<strong>'+visible+'</strong> / '+total+' écriture'+(visible>1?'s':'')+' trouvée'+(visible>1?'s':'');
-          }else{
-            searchClear.classList.remove('show');
-            searchCount.textContent='';
-          }
-
-          /* Message "aucun résultat" */
-          if(rawQuery.trim()&&visible===0){
-            const div=document.createElement('div');
-            div.className='no-results';
-            div.setAttribute('role','status');
-            div.innerHTML=
-              '<i class="fas fa-search-minus"></i>'+
-              '<h3>Aucune écriture trouvée</h3>'+
-              '<p>Aucun résultat pour « '+rawQuery.trim()+' ». Essayez un autre mot-clé ou numéro de compte.</p>'+
-              '<button class="no-results-reset" type="button"><i class="fas fa-rotate-left"></i> Réinitialiser la recherche</button>';
-            grid.appendChild(div);
-            div.querySelector('.no-results-reset').addEventListener('click',()=>{
-              searchInput.value='';
-              filter('');
-              searchInput.focus();
-            });
-          }
+        if(rawQuery.trim()){
+          searchClear.classList.add('show');
+          searchCount.innerHTML='<strong>'+visible+'</strong> / '+total+' écriture'+(visible>1?'s':'')+' trouvée'+(visible>1?'s':'');
+        }else{
+          searchClear.classList.remove('show');
+          searchCount.textContent='';
         }
 
-        /* Listeners */
-        searchInput.addEventListener('input',e=>filter(e.target.value));
+        if(rawQuery.trim()&&visible===0){
+          const div=document.createElement('div');
+          div.className='no-results';
+          div.setAttribute('role','status');
+          div.innerHTML='<i class="fas fa-search-minus"></i><h3>Aucune écriture trouvée</h3><p>Aucun résultat pour « '+rawQuery.trim()+' ». Essayez un autre mot-clé ou numéro de compte.</p><button class="no-results-reset" type="button"><i class="fas fa-rotate-left"></i> Réinitialiser la recherche</button>';
+          grid.appendChild(div);
+          div.querySelector('.no-results-reset').addEventListener('click',()=>{
+            searchInput.value='';filter('');searchInput.focus();
+          });
+        }
+      }
 
-        searchClear.addEventListener('click',()=>{
-          searchInput.value='';
-          filter('');
-          searchInput.focus();
-        });
+      searchInput.addEventListener('input',e=>filter(e.target.value));
+      searchClear.addEventListener('click',()=>{
+        searchInput.value='';filter('');searchInput.focus();
+      });
 
-        /* Raccourci "/" pour focus le champ de recherche
-           (sauf si le modal est ouvert ou si on est déjà dans un champ) */
-        document.addEventListener('keydown',e=>{
-          if(e.key==='/'&&!modal.classList.contains('is-open')){
-            const tag=document.activeElement?document.activeElement.tagName:'';
-            if(tag!=='INPUT'&&tag!=='TEXTAREA'){
-              e.preventDefault();
-              searchInput.focus();
-              searchInput.select();
-            }
+      document.addEventListener('keydown',e=>{
+        if(e.key==='/'&&!modal.classList.contains('is-open')){
+          const tag=document.activeElement?document.activeElement.tagName:'';
+          if(tag!=='INPUT'&&tag!=='TEXTAREA'){
+            e.preventDefault();searchInput.focus();searchInput.select();
           }
-          /* Escape dans le champ de recherche = vider */
-          if(e.key==='Escape'&&document.activeElement===searchInput&&searchInput.value){
-            e.preventDefault();
-            searchInput.value='';
-            filter('');
-          }
-        });
-      })();
+        }
+        if(e.key==='Escape'&&document.activeElement===searchInput&&searchInput.value){
+          e.preventDefault();searchInput.value='';filter('');
+        }
+      });
     })();
+    
+    /* ============ MISC ============ */
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Message envoyé ! (Démo)');
+      e.target.reset();
+    });
   </script>
 </body>
 </html>
